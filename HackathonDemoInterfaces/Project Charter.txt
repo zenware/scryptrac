@@ -1,0 +1,32 @@
+Reduction in Cost of Poor Quality in Prescription Drugs
+Team Members: Brian Anderson, Jay Looney
+
+Business Case
+Millions of dollars and thousands of lives are lost each year from prescription medications. As a matter of fact taking properly prescribed drugs is the fourth leading cause of death in the U.S. Adverse drug reactions are estimated to result in approximately 1.5 to 2.7 million hospitalizations each year.
+
+
+Opportunity Statement
+Common causes of injury due to ingestion of medication are known, but no process exists to help measure or prevent failures in this space. We cannot close this gap in public safety by continuing to fly by the seat of our pants. Blockchain tecnologies and HIPAA requirements provide an exhiliarating opportunity to make long strides in the transparency necessary to save vast sums of money and countless lives.
+
+
+Project Objective
+Create a database of prescription objects containing information relating to the four primary stakeholders and several secondary and alternate stakeholders. Build adequate privacy mechanisms into the database to ensure U.S. and international rules protecting the personal information of primary stakeholders are adhered to. Develop a set of required portals to display the information pertinent to a stakeholder regarding a particular prescription object.
+
+
+Project Scope
+In-scope:
+  OODB containing prescription objects
+  Authentication channels allowing role-based queries access to needed data.
+  Mobile and web portals to enable multi-role access.
+
+Out-of-scope:
+  Opioid and non-prescription hospitalizations / fatalities.
+  Special consideration for governmental oversight.
+
+
+Measuring Success
+  Number of root cause determinations for hospitalization and death related to prescribed drugs.
+  Aggregate data on drug prescription and usage patterns in provider and patient histories.
+  
+
+Process Map

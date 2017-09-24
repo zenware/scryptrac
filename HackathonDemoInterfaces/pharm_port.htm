@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="The Integrator Workbench Home">
+  <meta name="author" content="Brian P. Anderson">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/flaticon.css">
+</head>
+<body>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<header></header>
+<div id="actionBarL" class="fixedTL">
+	<span style="color:#fffcdb; vertical-align:middle; margin-left: 20px">Pharmacist Portal</span>
+</div>
+<div id="actionBarR" class="fixedTR">
+  <span style="color:#fffcdb"; class="flaticon-search-1"></span>
+  <span style="color:#fffcdb"; class="flaticon-alarm"></span>
+  <span style="color:#fffcdb"; class="flaticon-settings-6"></span>
+  <span style="color:#fffcdb"; class="flaticon-user-3"></span>
+  <span style="color:#fffcdb; margin-left: 20px"><strong>?</strong></span>
+  <span style="color:#fffcdb"; class="flaticon-exit-1"></span>
+</div>
+<div id="actionBarS" class="fixedS">
+  <p style="color:#fffcdb"; class="flaticon-home"></p>
+  <p style="color:#fffcdb"; class="flaticon-diploma"></p>
+  <p style="color:#fffcdb"; class="flaticon-print"></p>
+  <p style="color:#fffcdb"; class="flaticon-archive"></p>
+</div>
+<div id="statusBarL" class="fixedBL">
+	Prescription Review
+</div>
+<div id="statusBarR" class="fixedBR">
+	Connected: as Wayne Cunningham<br><span style="font-size: 70%; vertical-align: text-top; margin-top: 1px">Icons for the Navigation Bars Designed by Smashicons from Flaticon</span>
+</div>
+<div id="spaceWorkbench" class="fixedW">
+	<div id="patientRecord">
+		<span><img style="float: left;" width="200" src="./images/male1.jpg"></img>
+			Patient:  Campbell, Ethan<br>
+			Insurer: <select id="insurance-provider"></select><br>
+			Pharmacist: Wayne Cunningham<br>
+			Date: 25 September, 2017<br>
+			Pharmacy: CVS Pharmacy, 1801 Maple Ave., Clinton, TN
+		</span>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div id="scriptData">
+    <hr><p class="pData">Current Prescriptions:</p><br>
+		<div><p class="currentLegend">
+			<input type="checkbox" name="vehicle" value="Current" checked="checked">Current</input></p>
+		</div>
+		<div><p class="expiredLegend">
+      <input type="checkbox" name="vehicle" value="RecentExp" checked="checked">Recent, Expired</input>
+		</div>
+		<div class="newScript"><p class="pData">Gabapentin, 300mg 1 times a day</p>
+		<p class="pData">Start: 25 September, 2017, Until 31 December, 2017</p>
+		<p class="pData">100 count <input type="button" id="btnGenBar" value="Prescription Filled" ></p></div>
+		<div class="currentScript"><p class="pData">Doxazosin, 1 mg orally once a day</p>
+		<p class="pData">Start: 16 July, 2017, Until 30 September, 2017</p>
+		<p class="pData">For Hypertension</p></div>
+		<div class="expiredScript"><p class="pData">Simvastatin, 10 mg orally once a day in the evening</p>
+		<p class="pData">Start: 1 April, 2017, Discontinued 10 June, 2017</p>
+		<p class="pData">For Hypertension</p></div>
+		<div class="expiredScript">
+		<p class="pData">Hydrocortisone 2.5% Cream, Ointment</p>
+		<p class="pData">Start: 14 March, 2015, Until 10 June, 2015</p>
+		<p class="pData">For Skin rash</p></div>
+	</div>
+</div>
+<footer></footer>
+<script>
+</script>
+</body>
+<script>
+	var url = "https://api.betterdoctor.com/2016-03-01/insurances?user_key=188abcacef63ce01200709dd0a48ffe3";
+
+   $.getJSON(url, function (response) {
+     populateSelect(response['data']);
+   });
+
+   var select = document.getElementById('insurance-provider');
+
+   function populateSelect(insurance_data) {
+     for (var i = 0; i < insurance_data.length; i++){
+         var opt = document.createElement('option');
+         opt.value = insurance_data[i]['name'];
+         opt.innerHTML = insurance_data[i]['name'];
+         select.appendChild(opt);
+     }
+  }
+</script>
+</html>

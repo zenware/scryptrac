@@ -1,0 +1,2 @@
+export PRESCRIPTION=13d07a90199ccb3930d656653f14006a80777c17
+./qtum-cli -regtest callcontract $PRESCRIPTION 041fea07
